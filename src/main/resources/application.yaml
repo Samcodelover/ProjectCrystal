@@ -1,3 +1,20 @@
 spring:
-  application:
-    name: crystal
+  datasource:
+    # The Address: Tells Spring to use H2 in-memory and name it "testdb"
+    url: jdbc:h2:mem:testdb
+    # The Translator: Lets Java talk to H2
+    driverClassName: org.h2.Driver
+    # Security: Standard credentials for local practice
+    username: samal
+    password: umbrella
+  h2:
+    console:
+      # Enable the visual website to see your data
+      enabled: true
+      # The web address: http://localhost:8080/h2-console
+      path: /h2-console
+  jpa:
+    # This helps you see the "SQL" commands Spring sends to the database in your terminal
+    show-sql: true
+    hibernate:
+      ddl-auto: update
